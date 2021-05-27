@@ -1,0 +1,9 @@
+greenballs
+workflow-aggregator
+view-job-filters
+git
+workflow-multibranch
+sonar
+configuration-as-code
+docker-workflow
+docker-plugin
