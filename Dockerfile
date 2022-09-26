@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.249.2-jdk11
+FROM jenkins/jenkins:2.370-jdk11
 
 USER root
 # get maven 3.3.9
@@ -23,7 +23,7 @@ COPY jenkins.yaml /usr/share/jenkins/ref/jenkins.yaml
 
 # Jenkins plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 
 # Add groovy script to Jenkins hook
 COPY --chown=jenkins:jenkins init.groovy.d/ /var/jenkins_home/init.groovy.d/
